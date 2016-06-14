@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+      
+      body {
+        height: 100vh;
+        width: 100vh;
+      }
+
+      .box {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: red;
+        position: absolute;
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+
+    
+    <div class="box"></div>
+
+
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+
+      'use strict';
+
+      $(document).on("keydown", function(e){
+
+          var current_left_distance = $(".box").offset().left;
+
+          var new_left_distance = (current_left_distance - 50);
+          var new_right_distance = (current_left_distance + 50);
+
+          if (e.keyCode == 37 || e.which == 37) {
+            $(".box").css("left", new_left_distance + "px");
+          }
+
+          if (e.keyCode == 39 || e.which == 39) {
+            $(".box").css("left", new_right_distance + "px");
+          }
+
+      })
+      
+
+    </script>
+
+  </body>
+</html>
