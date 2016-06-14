@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+
+      
+      
+
+    </style>
+    
+  </head>
+  <body>
+
+    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+
+      'use strict';
+      var objeto_original = {nombre: "Gustavo", edad: 31, sexo: "M", casado: true, bancos: ["BBVA", "Consorcio", "BCI", "Banco Estado"]}
+
+      var objeto_copia = {}
+
+      var crearCopia = function(obj){
+        objeto_copia = (JSON.parse(JSON.stringify(obj)));
+      }
+
+      crearCopia(objeto_original);
+      console.log(objeto_copia);  
+
+    </script>
+
+  </body>
+</html>
