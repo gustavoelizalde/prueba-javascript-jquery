@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+
+      
+      
+
+    </style>
+    
+  </head>
+  <body>
+
+    
+    <script type="text/javascript">
+
+      
+
+      
+
+      var Student = function(nombre, arr_notas){ 
+        
+        // Validar notas a enteros
+        this.validateNotas = function(arr){
+          var notas_int = [];
+
+          for(var i=0; i < arr.length; i++){
+            notas_int.push(parseInt(arr[i]));
+          }
+
+          return notas_int;
+        }
+
+        // Validar nombre a String
+        this.validateName = function(name) {
+          return name.toString()
+        }
+
+        // Constructor
+        this.nombre = this.validateName(nombre);
+        this.arr_notas = this.validateNotas(arr_notas);
+
+        // Obtener promedio
+        this.getPromedio = function(){
+          var promedio = 0;
+
+          for (var i=0; i < this.arr_notas.length; i++){
+            promedio += this.arr_notas[i];
+          }
+
+          return (promedio/this.arr_notas.length)
+        }
+      }
+
+      var alumno1 = new Student("Oscar", [10, 9, 10]);
+      console.log(alumno1.getPromedio());      
+
+      
+
+    </script>
+
+  </body>
+</html>
