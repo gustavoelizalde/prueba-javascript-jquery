@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+
+      .preview {
+        display: block;
+        padding: 10px;
+        border: 1px solid grey;
+      }
+      
+
+    </style>
+    
+  </head>
+  <body>
+  
+    <h1>Preview Text</h1>
+    <div class="preview">
+      
+
+    </div>
+  
+    <h2>Text Construction</h2>
+    <form name="style_text">
+      
+      <label for="custom_txt">Ingrese el texto<br>
+      <textarea name="custom_txt" id="custom_txt" cols="60" rows="10"></textarea>
+      </label>
+      
+      <br><br>
+
+      <label for="color">Font Color:<br>
+        <input type="color" name="color" id="color" data-action="color" >
+      </label>
+      
+      <br><br>
+
+      <label for="size">Font Size:<br>
+        <input type="number" name="size" id="size" data-action="size" value="16" >
+      </label>
+      
+      <br><br>
+
+      <label for="font">Font Family:<br>
+        <select name="font" id="font" data-action="font" >
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Lucida Console">Lucida</option>
+        </select>
+      </label>
+
+    </form>
+
+    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+
+      'use strict';
+
+      // Text Sync
+      $("textarea[name=custom_txt]").on("keyup", function(e) {
+        var string = $(this).val();
+
+        $(".preview").text(string);
+      })
+
+      // Text Color
+      $("[data-action=color]").on("change", function(e) {
+        var color = $(this).val();
+
+        $(".preview").css({"color": color});
+      })
+
+      // Text Size
+      $("[data-action=size]").on("click", function(e) {
+        var size = $(this).val() + "px";
+
+        $(".preview").css("font-size", size);
+      })
+
+
+      // Font Family
+      $("[data-action=font]").on("change", function(e) {
+        var font = $(this).val();
+
+        $(".preview").css("font-family", font);
+      })
+      
+    </script>
+
+  </body>
+</html>
